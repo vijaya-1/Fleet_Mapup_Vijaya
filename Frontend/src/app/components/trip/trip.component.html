@@ -1,0 +1,7 @@
+<div class="trip-card">
+  <h3>Trip ID: {{ trip.id }}</h3>
+  <p>Progress: {{ trip.progress }}%</p>
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="trip.progress"></div>
+  </div>
+</div>

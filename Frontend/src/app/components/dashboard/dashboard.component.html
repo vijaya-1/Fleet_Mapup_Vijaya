@@ -1,0 +1,27 @@
+<div class="controls">
+  <button (click)="toggleSimulation()">
+    {{ isPlaying ? '⏸ Pause' : '▶️ Play' }}
+  </button>
+
+  <label>Speed:</label>
+  <button (click)="changeSpeed(1)">1x</button>
+  <button (click)="changeSpeed(5)">5x</button>
+  <button (click)="changeSpeed(10)">10x</button>
+</div>
+
+<hr />
+
+<div class="summary">
+  <h2>Fleet Summary</h2>
+  <p>Trips: {{ fleetSummary.totalTrips }}</p>
+  <p>≥50%: {{ fleetSummary.half }} | ≥80%: {{ fleetSummary.eighty }} | Completed: {{ fleetSummary.completed }}</p>
+</div>
+
+<hr />
+
+<div class="trip-list">
+  <h2>Trip Details</h2>
+  <div class="trip-grid">
+    <app-trip *ngFor="let trip of trips" [trip]="trip"></app-trip>
+  </div>
+</div>
